@@ -67,7 +67,7 @@ if __name__ == '__main__':
             detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
             num_detections = detection_graph.get_tensor_by_name('num_detections:0')
             for test_image_path in test_image_paths:
-                image = Image.open(test_img_path)
+                image = Image.open(test_image_path)
                 image_np = load_image_into_numpy_array(image)
                 image_np_expanded = np.expand_dims(image_np, axis=0)
                 (boxes, scores, classes, num) = sess.run(
